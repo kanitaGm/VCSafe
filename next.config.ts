@@ -1,7 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export', // Static Export Mode
+  experimental: {
+    appDir: true, // เปิดใช้ App Router
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,7 +11,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // จำเป็นสำหรับ export เพราะ Next Image Optimization ใช้ไม่ได้
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: 'https',
